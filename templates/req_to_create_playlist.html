@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="row paddedrow">
+      <div class="col-md-6">
+        <div class="container5">
+          <p>{{ name }}'s Top Tacks</p><br>
+          {% if picture %}
+           <img src={{ picture[0]["url"] }}>
+          {% endif %}
+            <div id="contact-form">
+              <form method="get" action="/login">
+                <input class="btn btn-secondary btn-lg" type="submit" value="create playlist" id="submit-button">
+              </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="container4">
+              {% for key, value in tracks_dict.iteritems() %}
+               <p id="songs"> {{ key }} </p>
+               {% if value["preview_url"] %}
+                <audio controls>
+                <source src="track_url.ogg" type="audio/ogg">
+                <source src="{{ value["preview_url"]}}" type="audio/mpeg">
+                 Your browser does not support the audio element.
+                </audio>
+              {% endif %}
+
+             {% endfor %}
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

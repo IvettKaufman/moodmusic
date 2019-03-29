@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="row paddedrow">
+      <div class="col-md-6">
+        <div class="container2">
+          <p>What is your current mood?</p>
+            <div id="contact-form">
+                <form method="post" action="/search_playlist">
+                  <input class="type-text" type="text" id="playlist" name="playlist" required="required" placeholder="Enter mood">
+                  <input class="btn btn-secondary btn-lg submit-button" type="submit" value="Find playlists" id="submit-button">
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="container2">
+      <p>Select playlist you want to check out</p><br>
+         <div id="contact-form">
+           <form method="post" action="/show_tracks">
+             <select name="playlist">
+               {% for key, value in playlist_dict.iteritems() %}
+                 <option value="{{ value }}">{{ key }}</option>
+               {% endfor %}
+             </select>
+             <input class="btn btn-secondary btn-lg" type="submit" value="Submit" id="submit-button">
+           </form>
+         </div>
+    </div>
+{% endblock %}

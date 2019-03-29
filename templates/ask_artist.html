@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <div class="container2">
+          <p>Spotify doesn't know playlist named {{ playlist }} <br>
+             Please, search again</p><br>
+          <div id="contact-form">
+            <form method="post" action="/search_playlist">
+              <input class="type-text" type="text" id="playlist" name="playlist" required="required" placeholder="Enter playlist"><br>
+              <input class="btn btn-secondary btn-lg" type="submit" value="Find" id="submit-button">
+            </form>
+
+          </div>
+        </div>
+
+{% endblock %}

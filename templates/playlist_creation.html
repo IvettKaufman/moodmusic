@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+        <div class="container2">
+          {% if res.status_code != 201 %}
+            <p>Sorry. An error occurred. Playlist wasn't created</p><br>
+          {% endif %}
+          <p>Playlist successfully created</p><br>
+        </div>
+{% endblock %}
